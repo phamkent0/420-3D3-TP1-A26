@@ -2,10 +2,10 @@ from observers.observers import Observateur
 
 class LoggerFichier(Observateur):
 
-    def __ini__(self,chemin_fichier: str = "portfolio.cvs")
+    def __init__(self, chemin_fichier: str = "portfolio.csv"):
         self.chemin_fichier = chemin_fichier
 
-    def actualiser(self, sujet):->None:
+    def actualiser(self, sujet) -> None:
         donnees = sujet.get_donnees()
         horodatage = donnees.get("horodatage")
         prix_actuels = donnees.get("prix_actuels",{})
