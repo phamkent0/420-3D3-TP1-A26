@@ -10,7 +10,7 @@ def recuperer_prix(ticker: str):
         raise ValueError(f"Le titre '{ticker}' n'existe pas.")
     return prix, info["open"]
 
-class PortfolioSysteme(Sujet)
+class PortfolioSysteme(Sujet):
 
     def __init__(self):
         super().__init__()
@@ -23,6 +23,7 @@ class PortfolioSysteme(Sujet)
         self._prix_actuel = {}
         self._horoldatage = ""
     def actualiser_cours(self) -> None:
+    #Erreur d'identations?
     self._prix_actuels.clear()
     for ticker in self._titres:
         try:
