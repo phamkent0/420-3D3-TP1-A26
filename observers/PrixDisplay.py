@@ -16,8 +16,8 @@ class PrixDysplay(Observateur):
             prix_actuels = donnees.get("prix_actuels",{})
 
 #sup
-            for ticker in list(self.frames_lignes.keys())
-                if ticker not in prix_actuels
+            for ticker in list(self.frames_lignes.keys()):
+                if ticker not in prix_actuels:
                     self.frames[ticker].destroy()
                     del self.frames_lignes[ticker]
                     del self.lables_prix[ticker]
