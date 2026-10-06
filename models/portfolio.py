@@ -23,16 +23,16 @@ class PortfolioSysteme(Sujet):
         self._prix_actuel = {}
         self._horoldatage = ""
     def actualiser_cours(self) -> None:
-    self._prix_actuels.clear()
-    for ticker in self._titres:
-        try:
-            prix, ouverture = recuperer_prix(ticker)
+        self._prix_actuels.clear()
+        for ticker in self._titres:
+            try:
+                prix, ouverture = recuperer_prix(ticker)
+            except Exception as e:
+                print(f"Erreur pour {ticker}: {e}")
             self._prix_actuels[ticker] = (prix, ouverture)
-        except Exception as e:
-            print(f"Erreur pour {ticker}: {e}")
 
-    self._horodatage = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    self.notifier()
+        self._horodatage = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        self.notifier()
 
     def get_donnees(self) -> dict:
         return {
