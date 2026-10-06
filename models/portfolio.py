@@ -23,7 +23,6 @@ class PortfolioSysteme(Sujet):
         self._prix_actuel = {}
         self._horoldatage = ""
     def actualiser_cours(self) -> None:
-    #Erreur d'identations?
     self._prix_actuels.clear()
     for ticker in self._titres:
         try:
