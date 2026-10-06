@@ -1,6 +1,4 @@
-
 from observers.observers import Observateur
-
 
 class PortfolioDisplay(Observateur):
 
